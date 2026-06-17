@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Defines the character encoding for the page -->
+  <meta charset="UTF-8" />
+
+  <!-- Makes the page responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Browser tab title -->
+  <title>QA Login Mini Project</title>
+
+  <!-- Links this HTML file to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Main page container -->
+  <main class="page">
+
+    <!-- Login card section -->
+    <section id="login-card" class="card" aria-label="Login form area">
+      <h1>QA Login</h1>
+      <p class="subtitle">Mini app for automated login testing</p>
+
+      <!-- 
+        Login form.
+        The novalidate attribute disables default browser validation
+        JavaScript validation controls the error messages.
+      -->
+      <form id="login-form" novalidate>
+        <!-- Username field label and input -->
+        <label for="username">Username</label>
+        <input 
+          id="username" 
+          name="username" 
+          type="text" 
+          autocomplete="username" 
+        />
+
+        <!-- Password field label and input -->
+        <label for="password">Password</label>
+        <input 
+          id="password" 
+          name="password" 
+          type="password" 
+          autocomplete="current-password" 
+        />
+
+        <!-- Submit button for the login form -->
+        <button type="submit">Sign in</button>
+      </form>
+
+      <!-- 
+        Message area for login errors or success messages.
+        role="alert" helps screen readers announce changes.
+      -->
+      <p id="message" role="alert" aria-live="polite"></p>
+
+      <!-- Demo credentials, for testing purposes -->
+      <details class="hint">
+        <summary>Demo accounts</summary>
+        <p>
+          Valid user:
+          <strong>qa_user</strong> /
+          <strong>Password123!</strong>
+        </p>
+        <p>
+          Locked user:
+          <strong>locked_user</strong> /
+          <strong>Password123!</strong>
+        </p>
+      </details>
+    </section>
+
+    <!-- 
+      Dashboard section
+      starts hidden and only appears after a successful login
+    -->
+    <section id="dashboard" class="card hidden" aria-label="Dashboard">
+      <h1>Dashboard</h1>
+      <p id="welcome-message"></p>
+      <button id="logout-button" type="button">Log out</button>
+    </section>
+
+  </main>
+
+  <!-- Links this page to the JavaScript login logic -->
+  <script src="login.js"></script>
+</body>
+</html>
