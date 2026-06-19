@@ -1,0 +1,112 @@
+/* 
+  Applies border-box sizing to every element.
+  This makes width and height calculations easier because padding and borders
+  are included in the total size.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f5f7;
+  color: #17202a;
+}
+
+/* Centers the login card or dashboard card on the page */
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Shared card style for both the login section and dashboard section */
+.card {
+  width: min(420px, 100%);
+  background: #ffffff;
+  border: 1px solid #d7dde5;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Removes extra top spacing from headings */
+h1 {
+  margin: 0 0 8px;
+}
+
+/* Smaller subtitle text under the heading */
+.subtitle {
+  margin-top: 0;
+  color: #5f6b7a;
+}
+
+/* Makes the form fields stack vertically with spacing */
+form {
+  display: grid;
+  gap: 10px;
+}
+
+/* Makes labels easier to read */
+label {
+  font-weight: 700;
+}
+
+/* Styles the username and password input boxes */
+input {
+  border: 1px solid #b8c2cc;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px;
+}
+
+/* Main button style */
+button {
+  margin-top: 10px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #1f6feb;
+  color: white;
+}
+
+/* Slightly darker button color when the user hovers over it */
+button:hover {
+  background: #185abc;
+}
+
+/* Reserves space for validation and success messages */
+#message {
+  min-height: 24px;
+  font-weight: 700;
+}
+
+/* Error message styling */
+.error {
+  color: #b42318;
+}
+
+/* Success message styling */
+.success {
+  color: #067647;
+}
+
+/* Demo account hint section */
+.hint {
+  margin-top: 16px;
+  color: #4d5966;
+}
+
+/* 
+  Utility class used to hide a section.
+  JavaScript adds or removes this class during login/logout.
+*/
+.hidden {
+  display: none;
+}
